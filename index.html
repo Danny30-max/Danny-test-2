@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daniel Ekonde — Journalist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:wght@300;400;600&family=Space+Mono:wght@400;700&family=Inter:wght@700;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink: #1a1a18;
+      --paper: #ffe8cc;
+      --cream: #ede8da;
+      --accent: #b5341c;
+      --muted: #6b6560;
+      --rule: #c8c0b0;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--paper);
+      color: var(--ink);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* ── MASTHEAD ── */
+    .masthead {
+      border-bottom: 3px double var(--ink);
+      text-align: center;
+    }
+
+    .masthead-meta {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.35em;
+      color: var(--muted);
+      padding: 12px 40px;
+      border-bottom: 1px solid var(--rule);
+      text-align: center;
+      text-transform: uppercase;
+      word-spacing: 0.4em;
+    }
+
+    .masthead-name {
+      padding: 40px 20px 28px;
+    }
+
+    .masthead-name::before,
+    .masthead-name::after {
+      content: '';
+      display: block;
+      height: 1px;
+      background: var(--ink);
+      width: 80px;
+      margin: 0 auto 18px;
+    }
+
+    .masthead-name::after {
+      margin: 18px auto 0;
+    }
+
+    h1 {
+      font-family: 'Inter', Arial, sans-serif;
+      font-weight: 700;
+      font-size: clamp(2.8rem, 8vw, 5rem);
+      letter-spacing: -0.02em;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .tagline {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 700;
+      font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+      color: var(--muted);
+      margin-top: 12px;
+      letter-spacing: 0.03em;
+    }
+
+    /* ── NAV ── */
+    nav {
+      border-bottom: 1px solid var(--rule);
+      padding: 14px 40px;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    nav a {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      padding-bottom: 2px;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    /* ── MAIN LAYOUT ── */
+    .page-wrapper {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 60px 30px 100px;
+    }
+
+    /* ── SECTION LABEL ── */
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .section-label span {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    /* ── PROFILE PHOTO ── */
+    .profile-figure {
+      margin: 0 0 40px;
+    }
+
+    .profile-figure img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      filter: sepia(15%) contrast(1.05);
+      transition: filter 0.4s ease;
+    }
+
+    .profile-figure img:hover {
+      filter: none;
+    }
+
+    figcaption {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      border-top: 1px solid var(--rule);
+      padding-top: 10px;
+      margin-top: 10px;
+      text-transform: uppercase;
+    }
+
+    /* ── BIO HEADER ── */
+    .bio-text h3 {
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: capitalize;
+      color: #000000;
+      margin-bottom: 20px;
+      padding: 20px 0;
+    }
+
+    /* ── BIO TEXT ── */
+    .bio-text p {
+      font-size: 1.1rem;
+      line-height: 1.85;
+      margin-bottom: 1.6em;
+    }
+
+    .bio-text p:first-child::first-letter {
+      font-family: 'Playfair Display', serif;
+      font-size: 4.5rem;
+      font-weight: 700;
+      float: left;
+      line-height: 0.75;
+      margin: 6px 10px 0 0;
+      color: var(--accent);
+    }
+
+    /* ── PULL QUOTE ── */
+    .pull-quote {
+      border-top: 3px solid var(--ink);
+      border-bottom: 1px solid var(--rule);
+      padding: 28px 0;
+      margin: 40px 0;
+    }
+
+    .pull-quote p {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: clamp(0.95rem, 2vw, 1.2rem);
+      line-height: 1.4;
+    }
+
+    .pull-quote cite {
+      display: block;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 14px;
+      font-style: normal;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 3px double var(--ink);
+      padding: 24px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .masthead-meta { flex-direction: column; gap: 4px; text-align: center; }
+      nav { gap: 20px; flex-wrap: wrap; padding: 14px 20px; }
+      footer { flex-direction: column; gap: 8px; text-align: center; }
+      .bio-text p:first-child::first-letter { font-size: 3.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="masthead">
+    <div class="masthead-meta">Multimedia &nbsp;·&nbsp; Data &nbsp;·&nbsp; Narrative</div>
+    <div class="masthead-name">
+      <h1>Daniel Ekonde</h1>
+      <p class="tagline">Eight years of storytelling</p>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#">Profile</a>
+    <a href="#">Articles</a>
+    <a href="blog.html">Blog</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <main class="page-wrapper">
+
+    <div class="section-label"><span>My Profile</span></div>
+
+    <figure class="profile-figure">
+      <img src="WhatsApp%20Image%202026-03-08%20at%2021.42.07.jpeg" alt="Daniel Ekonde">
+      <figcaption>Daniel completes his two-year masters in journalism this May — UC Berkeley, 2026</figcaption>
+    </figure>
+
+    <div class="bio-text">
+      <p>Daniel Ekonde is a journalist and Master of Journalism candidate at the University of California, Berkeley, specializing in narrative and multimedia storytelling. Originally from Cameroon, he brings an international lens to his reporting — covering stories across Africa and the United States.</p>
+
+      <p>His bylines span some of the world's most respected newsrooms, including Al Jazeera, CNN, Semafor, and Quartz. From fan-centric coverage of the Africa Cup of Nations to reporting on the first woman to deliver a child while being treated for Covid-19 in Cameroon, Daniel tells stories that cut across sport, health, politics, business, and culture.</p>
+
+      <div class="pull-quote">
+        <p>"In the San Francisco Bay Area, Daniel has reported for Berkeleyside, Mission Local, Oaklandside, and Oakland North. His Berkeleyside story on how six UC Berkeley students secured affordable housing drew 12,000 views in a single week."</p>
+      </div>
+
+      <p>Before coming to Berkeley, Daniel was a TV sports reporter, anchor, and match commentator at Cameroon Radio Television (CRTV), where he covered the 2022 FIFA World Cup and the 2021 AFCON. He was named Best TV Sports Reporter for his "insightful" coverage.</p>
+    </div>
+
+  </main>
+
+  <footer>
+    <span>© 2026 Daniel Ekonde</span>
+    <span>UC Berkeley — Graduate School of Journalism</span>
+    <span>All Rights Reserved</span>
+  </footer>
+
+</body>
+</html>

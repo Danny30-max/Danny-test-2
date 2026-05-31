@@ -25,6 +25,7 @@
     :root {
       --ink: #1a1a18;
       --paper: #ffe8cc;
+      --cream: #ede8da;
       --accent: #b5341c;
       --muted: #6b6560;
       --rule: #c8c0b0;
@@ -157,17 +158,58 @@
       background: var(--rule);
     }
 
-    /* ── BLOG POSTS ── */
-    .post {
-      border-bottom: 1px solid var(--rule);
-      padding: 36px 0;
+    /* ── POST CARDS ── */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
     }
 
-    .post:last-child {
-      border-bottom: none;
+    .post-card {
+      background: var(--cream);
+      border: 1px solid var(--rule);
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: #000000;
+      transition: box-shadow 0.2s, transform 0.2s;
     }
 
-    .post-date {
+    .post-card,
+    .post-card:visited,
+    .post-card:hover,
+    .post-card:active {
+      color: #000000;
+      text-decoration: none;
+    }
+
+    .post-card:hover {
+      box-shadow: 0 6px 24px rgba(0,0,0,0.1);
+      transform: translateY(-3px);
+    }
+
+    .post-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      filter: sepia(15%) contrast(1.05);
+      transition: filter 0.3s;
+    }
+
+    .post-card:hover img {
+      filter: none;
+    }
+
+    .post-card-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .post-card-date {
       font-family: 'Space Mono', monospace;
       font-size: 0.6rem;
       letter-spacing: 0.2em;
@@ -176,68 +218,31 @@
       margin-bottom: 10px;
     }
 
-    .post h2 {
+    .post-card h2 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(1.3rem, 3vw, 1.8rem);
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 14px;
-    }
-
-    .post h2 a {
-      color: var(--ink);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: color 0.2s, border-color 0.2s;
-    }
-
-    .post h2 a:hover {
-      color: var(--accent);
-      border-bottom-color: var(--accent);
-    }
-
-    .post p {
       font-size: 1.15rem;
-      color: var(--ink);
-      margin-bottom: 1.4em;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 12px;
+      color: #000000;
     }
 
-    .post p:last-child {
-      margin-bottom: 0;
+    .post-card p {
+      font-size: 0.95rem;
+      color: #333333;
+      line-height: 1.6;
+      flex: 1;
     }
 
-    .post-image {
-      margin: 32px 0;
-    }
-
-    .post-image img {
-      width: 100%;
-      display: block;
-      object-fit: cover;
-    }
-
-    .post-image figcaption {
+    .post-card-footer {
+      margin-top: 20px;
       font-family: 'Space Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.1em;
-      color: var(--muted);
-      border-top: 1px solid var(--rule);
-      padding-top: 10px;
-      margin-top: 10px;
-      text-transform: uppercase;
-    }
-
-    .read-more {
-      display: inline-block;
-      margin-top: 16px;
-      font-family: 'Space Mono', monospace;
-      font-size: 0.65rem;
+      font-size: 0.6rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--accent);
-      text-decoration: none;
-      border-bottom: 1px solid var(--accent);
-      padding-bottom: 2px;
+      border-top: 1px solid var(--rule);
+      padding-top: 14px;
     }
 
     /* ── FOOTER ── */
@@ -273,57 +278,39 @@
 
   <nav>
     <a href="index.html">Profile</a>
-    <a href="#">Articles</a>
-    <a href="blog.html" class="active">Blog</a>
+    <a href="blog.html" class="active">My Work</a>
     <a href="#">Contact</a>
   </nav>
 
   <main class="page-wrapper">
 
-    <div class="section-label"><span>Blog</span></div>
+    <div class="section-label"><span>My Work</span></div>
 
-    <article class="post">
-      <p class="post-date">April 2026</p>
-      <h2>“If you can write well and cut video…”: Relearning journalism at UC Berkeley in the AI bubble
-</h2>
+    <div class="cards-grid">
 
-      <figure class="post-image">
+      <a class="post-card" href="bad-company-review.html">
+        <div style="height: 220px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: var(--cream);">
+          <img src="Book%20image%201.jpeg" alt="Bad Company by Megan Greenwell" style="height: 180px; width: auto; transform: rotate(270deg);">
+        </div>
+        <div class="post-card-body" style="padding-top: 20px;">
+          <p class="post-card-date">May 31, 2026 · Book Review</p>
+          <h2>Megan Greenwell's "Bad Company"</h2>
+          <p>How private equity impacted the lives of four Americans in retail, health, local news, and housing — and the fight they put up against it.</p>
+          <div class="post-card-footer">Read More →</div>
+        </div>
+      </a>
+
+      <a class="post-card" href="ai-bubble.html">
         <img src="Summer%202025%20Intern%20Headshots%2008.jpg" alt="Daniel Ekonde, Summer 2025">
-        <figcaption>Daniel Ekonde — Editorial Intern, Berkeleyside, Summer 2025</figcaption>
-      </figure>
+        <div class="post-card-body">
+          <p class="post-card-date">April 2026</p>
+          <h2>"If you can write well and cut video…": Relearning journalism at UC Berkeley in the AI bubble</h2>
+          <p>A Cameroonian journalist's account of navigating the AI revolution while completing a Master's degree at UC Berkeley — and how a data science class changed everything.</p>
+          <div class="post-card-footer">Read More →</div>
+        </div>
+      </a>
 
-      <p>In October 2024, two months into an advanced news writing class, and the first semester of my two-year journalism program at University of California-Berkeley (UC Berkeley), I asked my professor what I needed to succeed in the next stage of my journalism career.</p>
-
-      <p>"If you can write well and cut video, that'll be good," he said.</p>
-
-      <p>"I was on the right track at Berkeley Journalism then," I thought.</p>
-
-      <p>I'd left Cameroon for the United States with six years of journalism practice — two in radio and four in television, where I worked as a TV reporter, presenter, and commentator for the Cameroon Radio Television's sports channel, CRTV Sports. In between I'd developed interest in online journalism, moonlighting for CNN, Al Jazeera, The Continent etc, and was constantly reading other global news publications drawing inspiration from their style of writing and reporting. I wanted to be like them — the copy-editors and commissioning editors in the comfy offices in London, Doha, New York, and Johannesburg.</p>
-
-      <p>While we were in class, a revolution was happening that I didn't have a clear picture of. OpenAI was two years in with its large language model, ChatGPT, and was promising how the technology would make humans more efficient at work and unlock wonders in physics and cancer research. Everybody fell for it. While the AI bubble was unfolding 45 minutes away in San Francisco — the world's tech HQ — we in Berkeley were reviewing stories about the effect of the technology on humans. A 14-year-old had committed suicide after conversing with an AI chatbot; her mother was suing.</p>
-
-      <p>The story was just a normal routine review we did in the class. I didn't think much about it. But for my Chinese classmate who brought up the piece, it meant something: A whole new beat was opening up, and this would influence the way journalism is done and also studied in the classroom. When we reviewed another AI-related story, the professor, a former Time Magazine entertainment reporter who'd spent a week reporting on the now-disgraced music tycoon Sean 'Diddy' Combs, threw a hint: "AI will be a lucrative beat for any reporter who can delve into it."</p>
-
-      <p>Did we know there was already massive AI development and reporting going on — that OpenAI had attempted to fire its CEO just nine months ago, sparking a media frenzy in San Francisco? Or that AI would go on to define the way we study in school?</p>
-
-      <p>Maybe I was the only one who didn't know all of that, and my colleagues were well plugged in. A Ghanaian schoolmate told me he doesn't read tons of notes about things he already knows as a specialist doctor. He just dumps them on ChatGPT or Perplexity, whose founders went to UC Berkeley, to get the salient points. Another from Kenya was testing the latest version of ChatGPT (Kenya has the highest number of ChatGPT users in Africa), becoming a believer. My journalism mates were pursuing data science classes in the business and engineering schools, using AI to vibe-code and create visual stories. I didn't know, and thought they were "geniuses" for taking on a complex field like data science most journalists dread.</p>
-
-      <p>In San Francisco, every billboard was promising a miracle, courting investors and CEOs. "Stop hiring humans," one read. Big tech companies like Amazon and Google were gutting thousands of jobs, betting on AI to automate the roles and drive up profit.</p>
-
-      <p>"If you're not using it, know that somebody is using it [to get things done faster]," said my product developer apartment-mate, referring to how his classmates vibe-code with the technology.</p>
-
-      <p>It wasn't until the first semester of my second year when a data science class forced me to join the trend. It was rocket science for the first few weeks. The professor lectured. It went in one ear and came out in another. "Who sent me here?" I wondered. Worst of all, we'd do coding exercises in class!</p>
-
-      <p>In a hardcore engineering school like Berkeley, one of the talent pools of Silicon Valley (home to Google, Facebook, OpenAI, NVIDIA, and the world's leading tech companies) where there's too much pressure to deliver, if you didn't know, you didn't. I rambled on my laptop keyboard as my classmates, most of them computer science students, conjured up answers within the few minutes the professor gave to write and run the code.</p>
-
-      <p>I felt empty in the class, until, one day, a classmate disclosed he used ChatGPT to derive a code chunk. At long last! That was my watershed moment in surmounting the frustration. I used AI for my assignments and disclosed I did, because, why not? I wasn't a data nerd like the teaching assistant for the class, who'd started coding at 13! I'd only done it once, for my undergraduate level thesis at the University of Buea before disappearing to be behind the mic and in front of the camera.</p>
-
-      <p>Becoming more daring, I took classes I thought were for "special people." When my department launched a tech-in-journalism course, I jumped on it and learnt how to use Google NotebookLM, an AI research assistant. I didn't let a coding-for-journalists class pass by. There, I learnt HTML, CSS, the dreaded JavaScript, and Python. I can now build my own website (you're reading this from a webpage on a website I created), style it and make it function the way I want.</p>
-
-      <p>Aside from that, I've added technology to politics and the economy, the beats I'm now covering, having spent six years calling sporting events. I read Karen Hao's <em>Empire of AI</em> book to understand how AI works.</p>
-
-      <p>Do I have any regrets; that I would've jumped on those technical courses immediately? NO! I fulfilled my mission at Berkeley Journalism: deepening my writing and video skills. The technical courses came as an addition, and I'm glad I took them in this AI revolution.</p>
-    </article>
+    </div>
 
 
 

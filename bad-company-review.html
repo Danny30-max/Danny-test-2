@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Review: Bad Company — Daniel Ekonde</title>
+
+  <!-- Open Graph / Social Media Preview -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://danielekonde.com/bad-company-review.html">
+  <meta property="og:title" content="Book Review: Megan Greenwell's &quot;Bad Company&quot;">
+  <meta property="og:description" content="How private equity impacted the lives of four Americans in retail, health, local news, and housing — a review of Megan Greenwell's Bad Company.">
+  <meta property="og:image" content="https://danielekonde.com/Summer%202025%20Intern%20Headshots%2008.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Daniel Ekonde">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Book Review: Megan Greenwell's &quot;Bad Company&quot;">
+  <meta name="twitter:description" content="How private equity impacted the lives of four Americans in retail, health, local news, and housing.">
+  <meta name="twitter:image" content="https://danielekonde.com/Summer%202025%20Intern%20Headshots%2008.jpg">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:wght@300;400;600&family=Space+Mono:wght@400;700&family=Inter:wght@700;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink: #1a1a18;
+      --paper: #ffe8cc;
+      --cream: #ede8da;
+      --accent: #b5341c;
+      --muted: #6b6560;
+      --rule: #c8c0b0;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--paper);
+      color: var(--ink);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* ── MASTHEAD ── */
+    .masthead {
+      border-bottom: 5px double var(--ink);
+    }
+
+    .masthead-meta {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.35em;
+      color: var(--muted);
+      padding: 12px 40px;
+      border-bottom: 1px solid var(--rule);
+      text-align: center;
+      text-transform: uppercase;
+      word-spacing: 0.4em;
+    }
+
+    .masthead-name {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 40px 30px 28px;
+    }
+
+    .masthead-name::before,
+    .masthead-name::after {
+      content: '';
+      display: block;
+      height: 1px;
+      background: var(--ink);
+      width: 80px;
+      margin: 0 0 18px;
+    }
+
+    .masthead-name::after {
+      margin: 18px 0 0;
+    }
+
+    h1 {
+      font-family: 'Inter', Arial, sans-serif;
+      font-weight: 900;
+      font-size: clamp(2.8rem, 8vw, 5rem);
+      letter-spacing: -0.02em;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .tagline {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 700;
+      font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+      color: var(--muted);
+      margin-top: 12px;
+      letter-spacing: 0.03em;
+    }
+
+    /* ── NAV ── */
+    nav {
+      border-bottom: 1px solid var(--rule);
+      padding: 14px 40px;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    nav a {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      padding-bottom: 2px;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    /* ── LAYOUT ── */
+    .page-wrapper {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 40px 30px 100px;
+    }
+
+    /* ── BACK LINK ── */
+    .back-link {
+      display: inline-block;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      margin-bottom: 32px;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .back-link:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    /* ── ARTICLE HEADER ── */
+    .article-kicker {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+      padding: 12px 0;
+    }
+
+    .article-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 16px;
+      border-bottom: 5px solid var(--ink);
+      padding-bottom: 28px;
+    }
+
+    .article-byline {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 40px;
+    }
+
+    /* ── PHOTO ── */
+    .article-figure {
+      margin: 0 0 40px;
+    }
+
+    .article-figure img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      transform: rotate(270deg);
+      transform-origin: center center;
+      filter: sepia(15%) contrast(1.05);
+      transition: filter 0.4s ease;
+    }
+
+    .article-figure img:hover {
+      filter: none;
+    }
+
+    .article-figure figcaption {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      border-top: 1px solid var(--rule);
+      padding-top: 10px;
+      margin-top: 10px;
+      text-transform: uppercase;
+    }
+
+    /* ── BODY TEXT ── */
+    .article-body p {
+      font-size: 1.15rem;
+      line-height: 1.85;
+      color: var(--ink);
+      margin-bottom: 1.6em;
+    }
+
+    .article-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .article-body p:first-child::first-letter {
+      font-family: 'Playfair Display', serif;
+      font-size: 4.5rem;
+      font-weight: 700;
+      float: left;
+      line-height: 0.75;
+      margin: 6px 10px 0 0;
+      color: var(--accent);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 3px double var(--ink);
+      padding: 24px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    @media (max-width: 600px) {
+      .masthead-meta { text-align: center; }
+      nav { gap: 20px; flex-wrap: wrap; padding: 14px 20px; }
+      footer { flex-direction: column; gap: 8px; text-align: center; }
+      .article-body p:first-child::first-letter { font-size: 3.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="masthead">
+    <div class="masthead-meta">Multimedia &nbsp;·&nbsp; Data &nbsp;·&nbsp; Narrative</div>
+    <div class="masthead-name">
+      <h1>Daniel Ekonde</h1>
+      <p class="tagline">Eight years of storytelling</p>
+    </div>
+  </header>
+
+  <nav>
+    <a href="index.html">Profile</a>
+    <a href="#">Articles</a>
+    <a href="blog.html" class="active">My Work</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <main class="page-wrapper">
+
+    <a class="back-link" href="blog.html">&#8592; Back to My Work</a>
+
+    <p class="article-date">May 31, 2026</p>
+    <p class="article-kicker">Book Review</p>
+    <h2 class="article-headline">Megan Greenwell's "Bad Company"</h2>
+    <p class="article-byline">By Daniel Ekonde</p>
+
+    <figure class="article-figure">
+      <img src="Book%20image%201.jpeg" alt="Bad Company by Megan Greenwell">
+      <figcaption>"Bad Company: Private Equity and the Death of the American Dream" — Megan Greenwell</figcaption>
+    </figure>
+
+    <div class="article-body">
+
+      <p>In 1970, when manufacturing boomed in America, with over a quarter million workers, economist Milton Friedman had a message to CEOs of companies: "The Social Responsibility for Business is to Increase its Profits." His influential theory asserted that a company's goal is to maximize profits for its shareholders by doing so legally and ethically. Friedman's doctrine emboldened private equity, which started snapping up more companies in the 1990s and after the 2008 Financial Crisis, polishing them for efficiency and value, then offloading them for higher returns.</p>
+
+      <p>Two of the common ways private equity maximizes profits for its shareholders is by cutting jobs and services in companies. Critics of this business model see it as slash-and-burn to generate profit at the expense of helpless workers who toil to generate money for companies and their shareholders. This is the crux of Megan Greenwell's book, "Bad Company: Private Equity and the Death of the American Dream". She records how private equity impacted the lives of four people in retail, health, local news media, and housing.</p>
+
+      <p>The person in retail, a deeply committed Toys "R" Us floor supervisor, worked for the company for six years before its collapse under a consortium of KKR, Bain Capital, and Vornado Realty Trust. While the consortium walked away with hundreds of millions of dollars, the retail supervisor and about 33,000 other workers went home empty-handed. The person in health, a Wyoming doctor, saw his beloved community hospital in Riverton bought up by private equity, then its key services gutted, and the rest syndicated with another rural hospital in the same chain. The third character, a journalist, witnessed the erosion of local journalism when PE-owned Gannett acquired the Austin-American Statesman and Indianapolis Star, two papers she worked for. The fourth person, a tenant in Northern Virginia, left public housing to end up in a private equity-owned apartment building that was poorly managed and highly priced.</p>
+
+      <p>Greenwell succeeds in showing the human cost of private capital in each of the character's story: the retailer sending an inhaler to a co-worker who lost her job alongside health insurance, residents in the Wyoming doctor's community having to travel miles away from their community for child delivery because their hospital cut the service, the reporter investing in union efforts to save jobs, fails, then gives up; and the tenant facing a giant private equity company whose bosses in New York know nothing about the building in Northern Virginia. Greenwell explores the psychological toll of stress, burnout, fear, and disillusionment by her characters.</p>
+
+      <p>One of the striking aspects the book outlines is how these industries made themselves vulnerable to private equity. The retail industry didn't innovate when Amazon started operating and listing items on the internet in 1994. PE companies, which thrive on the make-it-efficient-and-profitable mantra saw an opportunity to snap up many small scale retailers, who were running out of business in the wake of Amazon's rise. Rural hospitals became expensive to run and were almost on the verge of collapse. PE stepped in to "save" and "effectively" manage them. Newspaper ads moved to the internet, slashing profits of mostly local newspapers that failed to quickly adapt to the dotcom era and didn't innovate. PE saw an opening there, too. In response to the 2008 Financial Crisis, the Federal Reserve injected enormous amounts of cash into the market and kept rates low. This meant PE firms had more money and could easily offer quick, high cash payouts to individual landlords and small property owners.</p>
+
+      <p>Financial institutions doled out the capital and the government provided the legal backing for PEs, according to Greenwell. Hedge funds, endowments, insurance, and pension funds like CALPERS, with over half a trillion dollars in assets, lent cash to private equity with the aim of making higher returns. Because CALPERS funds are retirement benefits of teachers, nurses, and firefighters, the aim is to grow the cash to be able to pay every retiree, and PEs argue they are an attractive option for investors seeking higher returns. Bailouts and bankruptcy rules that protect creditors and investors to the detriment of workers are some of the government support PEs enjoy. "Taken together, it is very, very difficult for private equity firms to lose money," writes Greenwell. Greenwell explained that PEs finance the acquisition of a company on borrowed funds, and levy the debt on the company's assets, rendering it to service the debt with its profits instead of innovating and expanding.</p>
+
+      <p>Greenwell's argument on why PEs get little or no scrutiny from federal lawmakers is eye-opening. "A committed lobbying operation and donations to politicians of all political stripes have helped protect the industry's ability to operate largely unchecked," she wrote. Almost every year, a bill to regulate private equity has failed to pass in Congress, with Massachusetts senator Elizabeth Warren being the leading voice in the regulation push. Greenwell believes "regulating an industry with so much power and wealth would require massive willpower."</p>
+
+      <p>What's striking about the book, and even leaves readers (depending on where you stand) with hope, is the fight all the characters put up against these enormously opulent corporations. The retail worker goes on a tour courting lawmakers and institutional investors to press KKR, Bain Capital, and Vornado Realty Trust to pay Toys "R" Us workers' severance package — they got it. The Wyoming doctor joins forces with concerned Rivertonians to crusade for capital to construct a rival community hospital from the ground up. The reporter chooses to work for a non-profit, joining a growing number of stakeholders building a new model for local journalism. The tenant loses her lease, but joins an "army of little people" to take on the "big" private equity people running her former apartment.</p>
+
+      <p>Twelve million Americans work for PE-controlled companies, generating $1.7 trillion of America's GDP, according to the book. PEs actively run 29,000 portfolio companies, so picking a few of these firms that had bad deals doesn't fully represent the truth about private equity, argued Gary Sernovitz, managing director of private equity firm Lime Rock, on Bloomberg. "I'm not the target market for 'Bad Company' — I'm the target," he wrote. Greenwell simply picked four characters with sad stories linked to private equity and made the industry look bad.</p>
+
+      <p>He quoted Warren Buffett's 1989 annual letter to Berkshire Hathaway shareholders to buttress his point: "When a manager with a good reputation meets an industry with a bad reputation, it is normally the industry that leaves with its reputation intact." Buffett was explaining the economic downturn his company endured in the textile industry at that time — that market forces outweighed efficient management. In the tenant's case, argues Sernovitz, the private-equity company CIM bought a building in a terrible state, which it said was going to cost fortunes to fully repair and was not possible at the moment. LifePoint had successfully run the Wyoming doctor's beloved Riverton hospital for 21 years before it chopped off its obstetrics unit.</p>
+
+      <p>"Bad Company" offers a comprehensive detail of how private equity nearly upended the lives of the four characters of the book. Greenwell, too, had a taste of it, having worked for sports site Deadspin before another PE company, Great Hill Partners, acquired it. According to Greenwell, Great Hill took the site that had 20 million monthly visitors and within five years, readership fell flat. She didn't only apply literary expertise backed by lengthy interviews of the characters, but wrote the private equity story as a witness.</p>
+
+    </div>
+
+  </main>
+
+  <footer>
+    <span>&#169; 2026 Daniel Ekonde</span>
+    <span>UC Berkeley &#8212; Graduate School of Journalism</span>
+    <span>All Rights Reserved</span>
+  </footer>
+
+</body>
+</html>

@@ -183,21 +183,30 @@
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 40px;
+      margin-bottom: 16px;
     }
 
     /* ── PHOTO ── */
     .article-figure {
-      margin: 0 0 40px;
+      margin: 0 0 16px;
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .article-figure .img-wrapper {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
     }
 
     .article-figure img {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-      display: block;
-      transform: rotate(270deg);
-      transform-origin: center center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(270deg);
       filter: sepia(15%) contrast(1.05);
       transition: filter 0.4s ease;
     }
@@ -215,6 +224,7 @@
       padding-top: 10px;
       margin-top: 10px;
       text-transform: uppercase;
+      width: 100%;
     }
 
     /* ── BODY TEXT ── */
@@ -288,7 +298,9 @@
     <p class="article-byline">By Daniel Ekonde</p>
 
     <figure class="article-figure">
-      <img src="Book%20image%201.jpeg" alt="Bad Company by Megan Greenwell">
+      <div class="img-wrapper">
+        <img src="Book%20image%201.jpeg" alt="Bad Company by Megan Greenwell">
+      </div>
       <figcaption>"Bad Company: Private Equity and the Death of the American Dream" — Megan Greenwell</figcaption>
     </figure>
 
@@ -325,6 +337,32 @@
     <span>UC Berkeley &#8212; Graduate School of Journalism</span>
     <span>All Rights Reserved</span>
   </footer>
+
+  <script>
+    (function () {
+      const img = document.querySelector('.article-figure img');
+      const wrapper = img ? img.closest('.img-wrapper') : null;
+      if (!img || !wrapper) return;
+
+      function fit() {
+        const containerWidth = wrapper.offsetWidth;
+        // After 270deg rotation: visual width = natural height, visual height = natural width
+        const scale = containerWidth / img.naturalHeight;
+        const containerHeight = img.naturalWidth * scale;
+        wrapper.style.height = containerHeight + 'px';
+        img.style.width = 'auto';
+        img.style.height = (img.naturalHeight * scale) + 'px';
+      }
+
+      if (img.complete && img.naturalWidth) {
+        fit();
+      } else {
+        img.addEventListener('load', fit);
+      }
+
+      window.addEventListener('resize', fit);
+    })();
+  </script>
 
 </body>
 </html>
